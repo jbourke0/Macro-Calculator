@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Macro Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Advanced Macro Calculator</h1>
+            <p>Create personalized meal plans with Australian food database</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="basic-info">Basic Info</button>
+            <button class="tab-btn" data-tab="goals-macros">Goals & Macros</button>
+            <button class="tab-btn" data-tab="dietary">Dietary Restrictions</button>
+            <button class="tab-btn" data-tab="meal-plan">Meal Plan</button>
+            <button class="tab-btn" data-tab="shopping-list">Shopping List</button>
+        </nav>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Basic Info Tab -->
+            <div class="tab-panel active" id="basic-info">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Basic Information</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="age">Age</label>
+                                <input type="number" id="age" class="form-control" min="15" max="100" placeholder="25">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="gender">Gender</label>
+                                <select id="gender" class="form-control">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="weight">Weight</label>
+                                <div class="input-group">
+                                    <input type="number" id="weight" class="form-control" placeholder="70" step="0.1">
+                                    <div class="unit-toggle">
+                                        <button type="button" class="unit-btn active" data-unit="kg">kg</button>
+                                        <button type="button" class="unit-btn" data-unit="lbs">lbs</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="height">Height</label>
+                                <div class="input-group">
+                                    <input type="number" id="height" class="form-control" placeholder="175" step="0.1">
+                                    <div class="unit-toggle">
+                                        <button type="button" class="unit-btn active" data-unit="cm">cm</button>
+                                        <button type="button" class="unit-btn" data-unit="ft">ft</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="activity">Activity Level</label>
+                                <select id="activity" class="form-control">
+                                    <option value="">Select Activity Level</option>
+                                    <option value="1.2">Sedentary (little or no exercise)</option>
+                                    <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                    <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                                    <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                    <option value="1.9">Extremely active (very hard exercise, physical job)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goals & Macros Tab -->
+            <div class="tab-panel" id="goals-macros">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Goals & Macros</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label class="form-label" for="fitness-goal">Fitness Goal</label>
+                            <select id="fitness-goal" class="form-control">
+                                <option value="">Select Goal</option>
+                                <option value="weight_loss">Weight Loss Focus</option>
+                                <option value="muscle_gain">Muscle Building</option>
+                                <option value="maintenance">Weight Maintenance</option>
+                                <option value="body_recomp">Body Recomposition</option>
+                                <option value="keto">Ketogenic</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Meal Frequency</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="meal-frequency" value="3_meals" checked>
+                                    <span>3 Meals per day</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="meal-frequency" value="6_meals">
+                                    <span>6 Meals per day</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="toggle-group">
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="advanced-macros">
+                                    <span class="toggle-slider"></span>
+                                    Advanced Macro Override
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="macro-sliders" class="macro-controls hidden">
+                            <h3>Custom Macro Ratios</h3>
+                            <div class="slider-group">
+                                <label class="form-label">Protein: <span id="protein-value">30</span>%</label>
+                                <input type="range" id="protein-slider" min="10" max="60" value="30" class="macro-slider">
+                            </div>
+                            <div class="slider-group">
+                                <label class="form-label">Carbs: <span id="carbs-value">40</span>%</label>
+                                <input type="range" id="carbs-slider" min="5" max="70" value="40" class="macro-slider">
+                            </div>
+                            <div class="slider-group">
+                                <label class="form-label">Fat: <span id="fat-value">30</span>%</label>
+                                <input type="range" id="fat-slider" min="15" max="80" value="30" class="macro-slider">
+                            </div>
+                            <div class="macro-total">
+                                Total: <span id="macro-total">100</span>%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dietary Restrictions Tab -->
+            <div class="tab-panel" id="dietary">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Dietary Restrictions</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-section">
+                            <h3>Allergies & Intolerances</h3>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="gluten">
+                                    <span>Gluten</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="dairy">
+                                    <span>Dairy</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="eggs">
+                                    <span>Eggs</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="soy">
+                                    <span>Soy</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="fish">
+                                    <span>Fish</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="tree nuts">
+                                    <span>Tree Nuts</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="allergies" value="peanuts">
+                                    <span>Peanuts</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Dietary Preferences</h3>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="diet-preference" value="none" checked>
+                                    <span>No Restrictions</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="diet-preference" value="vegetarian">
+                                    <span>Vegetarian</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="diet-preference" value="vegan">
+                                    <span>Vegan</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="diet-preference" value="halal">
+                                    <span>Halal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Budget Level</h3>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="budget" value="low">
+                                    <span>Low Budget</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="budget" value="medium" checked>
+                                    <span>Medium Budget</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="budget" value="high">
+                                    <span>High Budget</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="food-dislikes">Food Preferences/Dislikes</label>
+                            <textarea id="food-dislikes" class="form-control" placeholder="List any foods you dislike or prefer to avoid..." rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meal Plan Tab -->
+            <div class="tab-panel" id="meal-plan">
+                <div class="meal-plan-header">
+                    <h2>Your Personalized Meal Plan</h2>
+                    <button class="btn btn--secondary" id="regenerate-plan">Regenerate Meal Plan</button>
+                </div>
+                
+                <div id="meal-plan-results" class="meal-plan-results">
+                    <div class="results-placeholder">
+                        <p>Complete the form and click "Calculate" to generate your meal plan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shopping List Tab -->
+            <div class="tab-panel" id="shopping-list">
+                <div class="shopping-header">
+                    <h2>Shopping List</h2>
+                    <button class="btn btn--secondary" id="print-list">Print List</button>
+                </div>
+                
+                <div id="shopping-list-results" class="shopping-results">
+                    <div class="results-placeholder">
+                        <p>Generate a meal plan first to see your shopping list</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <div class="calculate-section">
+            <button class="btn btn--primary btn--lg btn--full-width" id="calculate-btn">
+                Calculate & Generate Meal Plan
+            </button>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>Meal Frequency Comparison</h3>
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1750646085/pplx_code_interpreter/acd52893_qwhnxs.jpg" alt="Meal Frequency Comparison: 3 Meals vs 6 Meals" class="chart-image">
+                </div>
+                <div class="chart-card">
+                    <h3>Macronutrient Goals</h3>
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1750646156/pplx_code_interpreter/167953ca_yea3li.jpg" alt="Macronutrient Distributions for Different Nutritional Goals" class="chart-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
