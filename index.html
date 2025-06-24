@@ -1,216 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Macro Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
+<html lang="en">```ead>
+    <meta charset="```-8">
+    <meta name="```wport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Gym```cro Calculator | North Geelong```itle>
+    <link rel```tylesheet" href="calculator.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="header">
-            <h1>Advanced Macro Calculator</h1>
-            <p>Calculate your personalized nutrition plan with custom meal frequency and recipe viewing</p>
-        </div>
+    <div```ass="calculator-container">
+        ```v class="header">
+            <div```ass="carbon-branding">
+                ```>Carbon Gym</h1>
+                ```v class="subtitle">Macro Calculator```iv>
+            </div>
+            ```Calculate your personalized nutrition```an with custom meal frequency and macro control```>
+            <div class="location```dge">North Geelong •```/7 Access</div>
+        ```iv>
         <div class="calculator-form">
-            <form id="calculatorForm">
-                <div class="form-row">
+            <form id="calcul```rForm">
+                <div class="form```w">
                     <div class="form-group">
-                        <label for="age">Age</label>
-                        <input type="number" id="age" min="15" max="100" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <div class="gender-options">
-                            <div class="gender-option">
-                                <input type="radio" id="male" name="gender" value="male" required>
-                                <label for="male">Male</label>
-                            </div>
-                            <div class="gender-option">
-                                <input type="radio" id="female" name="gender" value="female" required>
-                                <label for="female">Female</label>
-                            </div>
-                        </div>
-                    </div>
+                        <label for="age```ge</label>
+                        ```put type="number" id="age"```n="15" max="100" required>
+                    ```iv>
+                    <div class="form```oup">
+                        <label>```der</label>
+                        <div```ass="gender-options">
+                ```         <div class="gender-option">
+                                <input type="radio"```="male" name="gender" value="```e" required>
+                                ```bel for="male">Male</label>```                          </div>
+                            ```v class="gender-option">
+                                ```put type="radio" id="female"```me="gender" value="female"```quired>
+                                <label for="female```emale</label>
+                            </div```                       </div>
+                    ```iv>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="height">Height</label>
-                        <input type="number" id="height" step="0.1" required>
-                        <div class="unit-toggle">
-                            <button type="button" class="unit-btn active" id="heightCm">cm</button>
-                            <button type="button" class="unit-btn" id="heightFt">ft/in</button>
+                ```v class="form-row">
+                ``` <div class="form-group">
+                        <label for="height">Height```abel>
+                        <input type="number```d="height" step="0.1" required>
+                        <div```ass="unit-toggle">
+                            ```tton type="button" class="unit-btn active```d="heightCm">cm</button```                           <button type="button"```ass="unit-btn" id="heightF```ft/in</button>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="weight">Weight</label>
-                        <input type="number" id="weight" step="0.1" required>
-                        <div class="unit-toggle">
-                            <button type="button" class="unit-btn active" id="weightKg">kg</button>
-                            <button type="button" class="unit-btn" id="weightLbs">lbs</button>
+                    </div```                   <div class="form-group">
+                        <label for="weight```eight</label>
+                        <input```pe="number" id="weight" step="```" required>
+                        ```v class="unit-toggle">
+                            ```tton type="button" class="unit-btn active" id="weightKg">kg```utton>
+                            <button type="```ton" class="unit-btn" id="```ghtLbs">lbs</button>
                         </div>
-                    </div>
+                    </div```               </div>
+                <div```ass="form-row">
+                    ```v class="form-group full-width">
+                ```     <label for="activity">Activity Level</label```                       <select id="activity"```quired>
+                            <option value="">Select```ur activity level</option>
+                            ```tion value="1.2">Sedent``` (little or no exercise)</option>```                          <option value="1.375">Lightly active (light exercise ``` days/week)</option>```                          <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>```                          <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                            ```tion value="1.9">Extremely active```ery hard exercise, physical job)</option>```                      </select>
+                    ```iv>
                 </div>
-                <div class="form-row">
+                ```v class="form-row">
+                    ```v class="form-group full```dth">
+                        <label>```ness Goal</label>
+                        <div```ass="goal-selection">
+                            ```v class="goal-option">
+                                ```put type="radio" id="weight```s" name="goal" value="weight```s" required>
+                                <label```r="weightLoss">Weight Loss</label```                               <p```gher protein, moderate carbs```>
+                            </div>
+                ```         <div class="goal-option">```                              <input type="radio" id="```cleGain" name="goal```alue="muscleGain" required>```                              <label```r="muscleGain">Muscle```in</label>
+                                <p>```her carbs, moderate protein</p>```                          </div>
+                            <div```ass="goal-option">
+                                ```put type="radio" id="maintenance```ame="goal" value="maintenance" require```                                <label for="maintenance">```ntenance</label>
+                                <p```lanced approach</p>
+                ```         </div>
+                            ```v class="goal-option">
+                ```             <input type="radio" id="re```p" name="goal```alue="reco``` required>
+                                <label for```ecomp">Body Reco```/label>
+                                <p>```ultaneous fat loss/```cle gain</p>
+                            </div```                           <div class="goal```tion">
+                                <input type="```io" id="keto" name="goal```alue="keto" required>
+                ```             <label for="keto">Ket```nic</label>
+                                ```Low carb, high fat```>
+                            </div>
+                ```         <div class="goal```tion">
+                                <input type="```io" id="custom" name="goal"```lue="custom" required>
+                                ```bel for="custom">Custom```cros</label>```                              <p>Set your```n ratios</p>```                          </div>
+                        </div```                   </div>
+                ```iv>
+
+                <!-- Custom Macro Controls -->
+                <div```ass="form-row" id="customMacroRow```tyle="display: none;">
+                    ```v class="form-group full```dth">
+                        <label>```tom Macro Ratios</label>```                      <div class="macro-sliders">
+                            <div class="slider```oup">
+                                <label```r="proteinSlider">```tein: <span id="prot```Percent">30</span>%</label>
+                                <input type="range```d="proteinSlider" min="``` max="50" value="30" class="macro-slider protein-slider">
+                ```         </div>
+                            <div class="```der-group">
+                                <label for```arbsSlider">Carbs: <span id="carbsPercent">40</span>%</label>
+                                ```put type="range" id="carbs```der" min="5" max="70" value="40" class="macro-slider carbs-slider">
+                            </div```                           <div class="slider-group">
+                                <label for="fat```der">Fat: <span id="fat```cent">30</span>%</label```                               <input type="range"```="fatSlider" min="15" max="75" value="30" class="macro-slider fat-slider">```                          </div>
+                            ```v class="macro-total">
+                                Total: <span id="```roTotal">100</span>% <span id="macroWar```g"></span>
+                            ```iv>
+                        </div>```                  </div>
+                </div>```               <div class="form-row">
                     <div class="form-group full-width">
-                        <label for="activity">Activity Level</label>
-                        <select id="activity" required>
-                            <option value="">Select your activity level</option>
-                            <option value="1.2">Sedentary (little or no exercise)</option>
-                            <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
-                            <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
-                            <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
-                            <option value="1.9">Extremely active (very hard exercise, physical job)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <label>Fitness Goal</label>
-                        <div class="goal-selection">
-                            <div class="goal-option">
-                                <input type="radio" id="weightLoss" name="goal" value="weightLoss" required>
-                                <label for="weightLoss">Weight Loss</label>
-                                <p>Higher protein, moderate carbs</p>
-                            </div>
-                            <div class="goal-option">
-                                <input type="radio" id="muscleGain" name="goal" value="muscleGain" required>
-                                <label for="muscleGain">Muscle Gain</label>
-                                <p>Higher carbs, moderate protein</p>
-                            </div>
-                            <div class="goal-option">
-                                <input type="radio" id="maintenance" name="goal" value="maintenance" required>
-                                <label for="maintenance">Maintenance</label>
-                                <p>Balanced approach</p>
-                            </div>
-                            <div class="goal-option">
-                                <input type="radio" id="recomp" name="goal" value="recomp" required>
-                                <label for="recomp">Body Recomp</label>
-                                <p>Simultaneous fat loss/muscle gain</p>
-                            </div>
-                            <div class="goal-option">
-                                <input type="radio" id="keto" name="goal" value="keto" required>
-                                <label for="keto">Ketogenic</label>
-                                <p>Low carb, high fat</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <label for="mealFrequency">Meal Frequency</label>
-                        <select id="mealFrequency" required>
-                            <option value="">Select meal frequency</option>
-                            <option value="1">1 Meal (OMAD - 23:1 Fasting)</option>
-                            <option value="2">2 Meals (Extended Fast)</option>
-                            <option value="3">3 Meals (Traditional)</option>
-                            <option value="4">4 Meals (3 + 1 Snack)</option>
-                            <option value="5">5 Meals (Frequent Small)</option>
+                        <label for```ealFrequency">Meal Frequency</label>
+                        ```lect id="mealFrequency"```quired>
+                            <option value="">Select```al frequency</option>```                          <option value="1">1 Meal (OMAD - 23:1 Fasting)</option>```                          <option value="2">2 Meals (Extended Fast)</option>
+                            ```tion value="3">3 Meals (Traditional)</option>
+                            ```tion value="4">4 Meals (3 + 1 Snack)</option>```                          <option value="5">5 Meals (Frequent Small)</option>
                             <option value="6">6 Meals (Bodybuilder Style)</option>
-                            <option value="custom">Custom Schedule</option>
-                        </select>
+                ```         <option value="custom```ustom Schedule</option>
+                ```     </select>
+                    </div>```              </div>
+                <div class```orm-row" id="customMeal```" style="display: none;">
+                ``` <div class="form-group">
+                        <label for="custom```ls">Number of Meals</label```                       <input type="number"```="customMeals" min="1" max="10" placeholder```.g., 7">
                     </div>
-                </div>
-                <div class="form-row" id="customMealRow" style="display: none;">
-                    <div class="form-group">
-                        <label for="customMeals">Number of Meals</label>
-                        <input type="number" id="customMeals" min="1" max="10" placeholder="e.g., 7">
-                    </div>
-                    <div class="form-group">
-                        <label for="customSchedule">Meal Times (optional)</label>
-                        <input type="text" id="customSchedule" placeholder="e.g., 7am, 11am, 3pm, 7pm">
-                    </div>
-                </div>
-                <button type="submit" class="calculate-btn">Calculate My Nutrition Plan</button>
-            </form>
-        </div>
-        <div class="results" id="results">
-            <div class="results-grid">
-                <div class="result-card">
-                    <h3>Basal Metabolic Rate</h3>
-                    <div class="result-value" id="bmrValue">0</div>
-                    <div class="result-unit">calories/day</div>
-                </div>
-                <div class="result-card">
-                    <h3>Total Daily Energy Expenditure</h3>
-                    <div class="result-value" id="tdeeValue">0</div>
-                    <div class="result-unit">calories/day</div>
-                </div>
-                <div class="result-card">
+                    ```v class="form-group">
+                ```     <label for="customSchedul```Meal Times```ptional)</label>
+                ```     <input type="text" id="custom```edule" placeholder="```., 7am, 11am, 3pm, 7pm">
+                    </div>```              </div>```              <button type="submit" class```alculate-btn">Calculate My```trition Plan</button>```          </form>```      </div>
+        <div class="```ults" id="results">```          <div class="```ults-grid">
+                <div```ass="result-card">
+                    ```>Basal Metabolic Rate```3>
+                ``` <div class="result-value" id="bmrValue">0</div>
+                    <div class="```ult-unit">calories/day</div>```              </div>
+                <div class```esult-card">
+                    <h```otal Daily Energy Expenditure```3>
+                ``` <div class="```ult-value" i```tdeeValue">0</div>
+                    ```v class="result-unit">calories/day```iv>
+                ```iv>
+                <div class="result```rd">
                     <h3>Target Calories</h3>
                     <div class="result-value" id="targetCalories">0</div>
-                    <div class="result-unit" id="targetDescription">calories/day</div>
-                </div>
+                    <div```ass="result-unit" id="targetDescription">calories```y</div>
+                </div>```          </div>
+            ```v class="macro```eakdown">
+                <h3>Macronut```nt Breakdown</h3>
+                <div class```acro-bars">
+                    ```v class="macro-bar">
+                        <div```ass="macro-segment protein```d="proteinBar">```tein</div>
+                        <div class```acro-segment car``` id="carbsBar">Carbs</div>```                      <div class="macro-segment fat```d="fatBar">Fat</div>
+                    </div```               </div>
+                ```v class="macro-details">
+                    ```v class="macro-detail protein">
+                        <div```ass="macro-name">Protein</div>
+                        ```v class="macro-grams" id="prot```Grams">0g</div>
+                ```     <div class="macro```lories" id="protein```s">0 calories</div>
+                    </div>```                  <div```ass="macro-detail carbs">
+                ```     <div class="```ro-name">Carbohydrates</div>```                      <div class="macro-grams" id="carbsGrams">0g</div>```                      <div class="macro-calories"```="carbsCals">0 calories```iv>
+                    </div>
+                ``` <div class="```ro-detail fat">
+                        <div```ass="macro-name">Fat</div>```                      <div class="macro-grams" id="fat```ms">0g</div>
+                        <div class="```ro-calories" id="fatCals">```alories</div>
+                    ```iv>
+                ```iv>
             </div>
-            <div class="macro-breakdown">
-                <h3>Macronutrient Breakdown</h3>
-                <div class="macro-bars">
-                    <div class="macro-bar">
-                        <div class="macro-segment protein" id="proteinBar">Protein</div>
-                        <div class="macro-segment carbs" id="carbsBar">Carbs</div>
-                        <div class="macro-segment fat" id="fatBar">Fat</div>
-                    </div>
-                </div>
-                <div class="macro-details">
-                    <div class="macro-detail protein">
-                        <div class="macro-name">Protein</div>
-                        <div class="macro-grams" id="proteinGrams">0g</div>
-                        <div class="macro-calories" id="proteinCals">0 calories</div>
-                    </div>
-                    <div class="macro-detail carbs">
-                        <div class="macro-name">Carbohydrates</div>
-                        <div class="macro-grams" id="carbsGrams">0g</div>
-                        <div class="macro-calories" id="carbsCals">0 calories</div>
-                    </div>
-                    <div class="macro-detail fat">
-                        <div class="macro-name">Fat</div>
-                        <div class="macro-grams" id="fatGrams">0g</div>
-                        <div class="macro-calories" id="fatCals">0 calories</div>
-                    </div>
-                </div>
-            </div>
-            <div class="meal-plan">
-                <h3 id="mealPlanTitle">Sample Meal Plan</h3>
-                <div id="mealPlanContent">
+            ```v class="meal```an">
+                <h3 id="mealP```Title">Sample Meal Plan</h```                <div i```mealPlanContent">
                     <!-- Meals will be generated here -->
-                </div>
-                <button class="generate-btn" id="generateMealBtn">Generate New Meal Plan</button>
+                ```iv>
+                <button```ass="generate-btn" id="generateMealBtn```enerate New Meal Plan</button```           </div>
+            ```v class="carbon```oter">
+                <p```sit Carbon Gym at```it 3/21-31 The Boulevard, North Geelong```>
+                ```24/7 Access • Recovery Facilities • Personal```aining</p>```              <a href="https://carb```ym.com.au" target="_blank```lass="website-link">carb```ym.com.au</a>
             </div>
-        </div>
-    </div>
+        </div>```  </div>
 
     <!-- Recipe Modal -->
-    <div id="recipeModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h2 id="recipeTitle">Recipe Name</h2>
-            <div class="recipe-details">
-                <div class="recipe-info">
-                    <p><strong>Servings:</strong> <span id="recipeServings">1</span></p>
-                    <p><strong>Prep Time:</strong> <span id="recipePrepTime">15 minutes</span></p>
-                    <p><strong>Cook Time:</strong> <span id="recipeCookTime">20 minutes</span></p>
-                    <p><strong>Estimated Cost:</strong> <span id="recipeCost">$8.50 AUD</span></p>
+    <div```="recipeModal"```ass="modal">
+        <div class="```al-content">
+            <span class="```se-btn" id="closeModal">&```es;</span>
+            <h2 id="recipeTitle">```ipe Name</h2>
+            <div class="recipe-details">```              <div class="recipe-info">
+                    <p```trong>Servings:</strong> ```an id="recipeServ```s">1</span></p>
+                ``` <p><strong```ep Time:</strong> <span i```recipePrepTime">15 minutes</span></p>```                  <p><strong>Cook Time```strong> <span id="recip```okTime">20 minutes</span>```>
+                    <p><strong>```imated Cost:</strong> <span```="recipeCost">$8.50 AUD</span></p```               </div>
+                <div```ass="recipe-nutrition">
+                    ```>Nutrition per```rving:</h4>
+                    <p```lories: <span id="```ipeCalories">0</span></p>
+                    ```Protein: <span id="```ipeProtein">0g</span></p>
+                    <p>Car``` <span id="recipeCarbs```g</span></p>
+                ``` <p>Fat: <span id="```ipeFat">0g</span></p>
                 </div>
-                <div class="recipe-nutrition">
-                    <h4>Nutrition per serving:</h4>
-                    <p>Calories: <span id="recipeCalories">0</span></p>
-                    <p>Protein: <span id="recipeProtein">0g</span></p>
-                    <p>Carbs: <span id="recipeCarbs">0g</span></p>
-                    <p>Fat: <span id="recipeFat">0g</span></p>
-                </div>
-            </div>
-            <div class="recipe-content">
-                <div class="ingredients-section">
-                    <h4>Ingredients:</h4>
-                    <ul id="recipeIngredients"></ul>
-                </div>
-                <div class="instructions-section">
-                    <h4>Instructions:</h4>
-                    <ol id="recipeInstructions"></ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="calculator.js"></script>
+            </div>```          <div class="recipe```ntent">
+                <div```ass="ingredients-section">
+                ``` <h4>Ingredients:</h4>
+                ``` <ul id="recipeIng```ients"></ul>
+                </div>```              <div class="instructions```ction">
+                ``` <h4>Instructions:</h4>
+                    <ol```="recipeInstructions"></ol>```              </div>
+            </div>```      </div>
+    </div>```  <script src="```culator.js"></script>
 </body>
 </html>
