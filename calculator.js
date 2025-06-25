@@ -2,14 +2,13 @@
 let heightUnit = 'cm';
 let weightUnit = 'kg';
 
-// Goal configuration with custom option
+// Goal configuration
 const goalSettings = {
     weightLoss: { protein: 0.35, carbs: 0.35, fat: 0.30, calorieAdjustment: -500, description: "Weight Loss (500 cal deficit)" },
     muscleGain: { protein: 0.30, carbs: 0.45, fat: 0.25, calorieAdjustment: 500, description: "Muscle Gain (500 cal surplus)" },
     maintenance: { protein: 0.30, carbs: 0.40, fat: 0.30, calorieAdjustment: 0, description: "Maintenance (calorie balance)" },
     recomp: { protein: 0.35, carbs: 0.35, fat: 0.30, calorieAdjustment: -200, description: "Body Recomposition (200 cal deficit)" },
-    keto: { protein: 0.25, carbs: 0.05, fat: 0.70, calorieAdjustment: 0, description: "Ketogenic (low carb)" },
-    custom: { protein: 0.30, carbs: 0.40, fat: 0.30, calorieAdjustment: 0, description: "Custom macro ratios" }
+    keto: { protein: 0.25, carbs: 0.05, fat: 0.70, calorieAdjustment: 0, description: "Ketogenic (low carb)" }
 };
 
 // Enhanced food database with recipes and Australian pricing
@@ -143,16 +142,6 @@ document.getElementById('generateMealBtn').addEventListener('click', generateMea
 document.getElementById('mealFrequency').addEventListener('change', handleMealFrequencyChange);
 document.getElementById('closeModal').addEventListener('click', closeRecipeModal);
 
-// Custom macro slider event listeners
-document.getElementById('proteinSlider').addEventListener('input', updateMacroSliders);
-document.getElementById('carbsSlider').addEventListener('input', updateMacroSliders);
-document.getElementById('fatSlider').addEventListener('input', updateMacroSliders);
-
-// Goal change event listener to show/hide custom macro controls
-document.querySelectorAll('input[name="goal"]').forEach(radio => {
-    radio.addEventListener('change', handleGoalChange);
-});
-
 // Close modal when clicking outside
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('recipeModal');
@@ -160,46 +149,6 @@ window.addEventListener('click', function(event) {
         closeRecipeModal();
     }
 });
-
-function handleGoalChange() {
-    const selectedGoal = document.querySelector('input[name="goal"]:checked').value;
-    const customMacroRow = document.getElementById('customMacroRow');
-    
-    if (selectedGoal === 'custom') {
-        customMacroRow.style.display = 'flex';
-    } else {
-        customMacroRow.style.display = 'none';
-    }
-}
-
-function updateMacroSliders() {
-    const proteinValue = parseInt(document.getElementById('proteinSlider').value);
-    const carbsValue = parseInt(document.getElementById('carbsSlider').value);
-    const fatValue = parseInt(document.getElementById('fatSlider').value);
-    
-    document.getElementById('proteinPercent').textContent = proteinValue;
-    document.getElementById('carbsPercent').textContent = carbsValue;
-    document.getElementById('fatPercent').textContent = fatValue;
-    
-    const total = proteinValue + carbsValue + fatValue;
-    document.getElementById('macroTotal').textContent = total;
-    
-    const warningElement = document.getElementById('macroWarning');
-    if (total !== 100) {
-        warningElement.textContent = `(Must equal 100%)`;
-        warningElement.style.color = '#e74c3c';
-    } else {
-        warningElement.textContent = '✓';
-        warningElement.style.color = '#2ECC40';
-    }
-    
-    // Update custom goal settings
-    if (total === 100) {
-        goalSettings.custom.protein = proteinValue / 100;
-        goalSettings.custom.carbs = carbsValue / 100;
-        goalSettings.custom.fat = fatValue / 100;
-    }
-}
 
 function handleMealFrequencyChange() {
     const customRow = document.getElementById('customMealRow');
@@ -245,20 +194,6 @@ function toggleWeightUnit(unit) {
 // Form submission
 document.getElementById('calculatorForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Validate custom macros if selected
-    const selectedGoal = document.querySelector('input[name="goal"]:checked').value;
-    if (selectedGoal === 'custom') {
-        const total = parseInt(document.getElementById('proteinSlider').value) + 
-                     parseInt(document.getElementById('carbsSlider').value) + 
-                     parseInt(document.getElementById('fatSlider').value);
-        
-        if (total !== 100) {
-            alert('Custom macro percentages must equal 100% before calculating.');
-            return;
-        }
-    }
-    
     calculateResults();
     generateMealPlan();
 });
@@ -410,8 +345,7 @@ function generateMealPlan() {
     costSummary.style.textAlign = 'center';
     costSummary.style.marginTop = '20px';
     costSummary.style.padding = '15px';
-    costSummary.style.background = 'linear-gradient(90deg, #2ECC40, #1B5E20)';
-    costSummary.style.color = 'white';
+    costSummary.style.backgroundColor = '#f0f7ed';
     costSummary.style.borderRadius = '8px';
     costSummary.innerHTML = `<strong>Estimated Daily Cost: $${totalCost.toFixed(2)} AUD</strong>`;
     mealPlanContent.appendChild(costSummary);
